@@ -38,6 +38,11 @@ export default function Hero() {
               See the 45 days
             </a>
           </div>
+          <p className="hero__by">
+            Developed by <strong>Aldrin Kyle Delfin</strong>
+            <span aria-hidden="true"> · </span>
+            <span className="hero__by-class">BS InfoTech - S.E - 2A</span>
+          </p>
         </div>
 
         <figure className="hero__disc">
