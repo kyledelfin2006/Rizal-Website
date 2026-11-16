@@ -178,11 +178,15 @@ export interface Person {
   role: string;
   text: string;
   confidence: Confidence;
+  img?: string;
+  imgNote?: string;
 }
 
 export const people: Person[] = [
   {
     name: "Juan Perez Caballero",
+    img: "assets/people/caballero.jpg",
+    imgNote: "Photographed later in life, by Christian Franzen",
     role: "Diplomat at the Spanish Legation",
     text: "He called on Rizal at the Tokyo Hotel and invited him to live at the legation. Sources differ on his title: some say secretary, Craig says minister.",
     confidence: "differ",
@@ -196,6 +200,8 @@ export const people: Person[] = [
   },
   {
     name: "Tetcho Suehiro",
+    img: "assets/people/suehiro.jpg",
+    imgNote: "Portrait, before 1896",
     jp: "末広鉄腸",
     role: "Journalist and novelist",
     text: "Met aboard the Belgic. Craig does not name him but describes a Japanese newspaperman who spoke no other language and travelled with Rizal all the way to London, with Rizal acting as interpreter.",
@@ -209,6 +215,8 @@ export const people: Person[] = [
   },
   {
     name: "José Maria Basa",
+    img: "assets/people/basa.jpg",
+    imgNote: "Portrait, 1922 publication",
     role: "Exile in Hong Kong",
     text: "Met just before Japan. He looked after Filipino students in the colony and had been exiled in 1872.",
     confidence: "biography",
@@ -331,6 +339,12 @@ export const credits: Credit[] = [
   { what: "Yomei Mon (Great Gate) at Nikko", who: "1880s photograph, via Wikimedia Commons", licence: "No known restrictions" },
   { what: "Ginza in the 1880s", who: "Via Wikimedia Commons", licence: "Public domain" },
   { what: "Blank map of Japan (outline cropped and recoloured)", who: "Lincun, modified by Erida539, via Wikimedia Commons", licence: "CC BY-SA 3.0" },
+];
+
+export const peopleCredits: Credit[] = [
+  { what: "Juan Pérez Caballero (photograph by Christian Franzen, printed in Nuevo Mundo)", who: "Via Wikimedia Commons, Juan_Pérez_Caballero,_de_Christian_Franzen.jpg", licence: "Public domain" },
+  { what: "Tetchō Suehiro (portrait)", who: "Unknown author, via Wikimedia Commons, Suehiro_Tetcho.jpg", licence: "Public domain" },
+  { what: "José Maria Basa (portrait)", who: "Via Wikimedia Commons, Jose_ma_basa_PG.jpg", licence: "Public domain" },
 ];
 
 export const disclaimer =

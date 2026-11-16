@@ -37,6 +37,17 @@ export function People() {
         <ul className="cast">
           {people.map((p) => (
             <li key={p.name} className="member">
+              {p.img ? (
+                <figure className="member__fig">
+                  <img src={`${import.meta.env.BASE_URL}${p.img}`} alt={`Portrait of ${p.name}`} loading="lazy" />
+                  <figcaption>{p.imgNote}</figcaption>
+                </figure>
+              ) : (
+                <div className="member__fig member__fig--none" aria-hidden="true">
+                  <span>{p.name.replace(/\(.*\)/, "").trim().split(" ").slice(-1)[0][0]}</span>
+                  <small>No known portrait</small>
+                </div>
+              )}
               {p.jp && (
                 <span className="member__jp" lang="ja" aria-hidden="true">
                   {p.jp}

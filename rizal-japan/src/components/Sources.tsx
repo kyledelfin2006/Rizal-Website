@@ -1,4 +1,4 @@
-import { confidenceHelp, confidenceLabel, Confidence, credits, disclaimer, furtherReading, sources } from "../data/content";
+import { confidenceHelp, confidenceLabel, Confidence, credits, peopleCredits, disclaimer, furtherReading, sources } from "../data/content";
 import Badge from "./Badge";
 
 export default function Sources() {
@@ -46,7 +46,7 @@ export default function Sources() {
 
         <h3>Image credits</h3>
         <ul className="refs">
-          {credits.map((c) => (
+          {[...credits, ...peopleCredits].map((c) => (
             <li key={c.what}>
               <strong>{c.what}.</strong> {c.who}. {c.licence}.
             </li>
