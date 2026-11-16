@@ -18,7 +18,7 @@ Not a brochure. This is a scrolling travel-guide website with an interactive map
 
 ## Site structure
 
-1. Hero: what this is, the dates, a ship sailing across the wave on a loop.
+1. Hero: what this is, the dates, a ship sailing back and forth across the wave on a loop.
 2. The voyage: ribbon from Manila to London with the Japan leg emphasised (why Japan was a stopover).
 3. The route: sticky map of the Kanto region. Scrolling five chapters (Yokohama, Tokyo Hotel, Spanish Legation, day trips, departure) moves the highlight along the route.
 4. The 45 days: a calendar from 28 Feb to 13 Apr with the dated events pinned. 1888 was a leap year.
@@ -64,7 +64,7 @@ Layout:
 - Stamps and kanji are used where they carry meaning (places, dates), never as filler.
 
 Motion:
-- One ambient moment: the ship crossing the wave on a slow loop (18s).
+- One ambient moment: the ship crossing the wave back and forth on a slow loop (20s), always on screen.
 - Everything else answers the user (scrolling the map, opening a card, answering the quiz).
 - `prefers-reduced-motion` turns the ship off.
 
