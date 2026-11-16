@@ -68,15 +68,15 @@ export const chapters: Chapter[] = [
   },
   {
     id: "tokyo-hotel",
-    when: "29 February to 7 March",
+    when: "About 1 March to 7 March",
     title: "The Tokyo Hotel",
     places: ["tokyo"],
-    confidence: "repeated",
+    confidence: "differ",
     body: [
-      "The next day he travels by train to Tokyo and takes a room at the Tokyo Hotel.",
+      "Within a day or two he travels by train to Tokyo and takes a room at the Tokyo Hotel.",
       "A diplomat from the Spanish Legation, Juan Perez Caballero, visits him there and invites him to stay at the legation.",
     ],
-    note: "Today a bust of Rizal stands in Hibiya Park, on the site where the Tokyo Hotel once was.",
+    note: "Sources differ on the day he reached Tokyo: some say 29 February, Philippine government sources say 1 March (so his stay was 1 to 7 March), and one chronology says 2 March. The calendar marks 29 February, the earliest date given. Today a bust of Rizal stands in Hibiya Park, on the site where the Tokyo Hotel once was.",
   },
   {
     id: "legation",
@@ -131,7 +131,7 @@ export interface DayEvent {
 
 export const dayEvents: DayEvent[] = [
   { iso: "1888-02-28", label: "Arrives in Yokohama", confidence: "repeated" },
-  { iso: "1888-02-29", label: "Moves to the Tokyo Hotel, where Caballero invites him to the legation", confidence: "repeated" },
+  { iso: "1888-02-29", label: "Moves to the Tokyo Hotel (some sources say 1 March), where Caballero invites him to the legation", confidence: "differ" },
   { iso: "1888-03-07", label: "Moves into the Spanish Legation", confidence: "repeated" },
   { iso: "1888-04-13", label: "Sails from Yokohama on the Belgic", confidence: "differ" },
 ];
@@ -316,6 +316,21 @@ export const sources: Source[] = [
     label: "Rizal: Romantic Interlude in Japan, 1888 (student slides).",
     url: "https://www.slideshare.net/kenjiekris/chapter-12pptx-253826867",
     used: "Cross-check for dates (28 February, 7 March, 13 April), the excursions and O-Sei-San. Secondary, not scholarly.",
+  },
+  {
+    label: "Jose Rizal in Japan (1888): O-Sei-San and the Road Not Taken. joserizal.com.",
+    url: "https://www.joserizal.com/life/rizal-in-japan/",
+    used: "Opened and read. Confirms 28 February arrival at the Grand Hotel, 13 April sailing on the Belgic after 45 days, and Caballero as legation secretary. It gives no dates for the Tokyo move or the excursions.",
+  },
+  {
+    label: "National Historical Commission of the Philippines. The Song of O-Sei-San.",
+    url: "https://nhcp.gov.ph/articles/the-song-of-o-sei-san/",
+    used: "Cited in search results for O-Sei-San's marriage to Alfred Charlton in 1897, her English and French, and her later life. Not opened.",
+  },
+  {
+    label: "Japan Times (2013). Estrada honors Rizal at Hibiya Park, Tokyo.",
+    url: "https://japantimes.co.jp/news/2013/09/29/national/estrada-honors-rizal-at-hibiya-park-tokyo",
+    used: "Cited in search results for the Hibiya Park bust. Philippine government and embassy pages give 1 to 7 March for the Tokyo Hotel stay. Sources disagree on when the bust was unveiled (1961 or 1998), so this page gives no year.",
   },
 ];
 

@@ -87,7 +87,13 @@ First draft: heritage page on cream paper, big serif, stat tiles, three feature 
 
 ## Accuracy notes
 
-Not verified against Guerrero or Zaide. Confirm "Widely repeated" items before formal submission.
+Checked on 16 November 2026 against Craig (full text), joserizal.com (opened) and search results from the NHCP, Philippine Embassy in Tokyo, Japan Times and Philippine government pages.
+
+- Confirmed: 28 February arrival, Grand Hotel, 13 April sailing on the Belgic, 45 days, Mrs. Jackson, Basa, the declined job, Hibiya Park bust at the Tokyo Hotel site, O-Sei-San's 1897 marriage to Alfred Charlton and her English and French.
+- Changed: the Tokyo Hotel start is now tagged *Sources differ* (29 February, 1 March or 2 March).
+- Left as Sources differ: Caballero's title, the day-trip dates, the sailing date (13 versus 18 April).
+- Still unchecked: Guerrero and Zaide (not available online), and the NHCP, Japan Times and Embassy pages were read only through search summaries. Do this before formal submission.
+- Not on the page because sources conflict: the year the Hibiya bust was unveiled (1961 or 1998).
 
 ---
 
