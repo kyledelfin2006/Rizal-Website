@@ -43,6 +43,8 @@ export default function RouteMap() {
     return () => io.disconnect();
   }, []);
 
+  const go = (i: number) => refs.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" });
+
   const on = new Set<PlaceKey>(chapters[active].places);
   const trips = chapters[active].id === "day-trips";
 
@@ -50,9 +52,10 @@ export default function RouteMap() {
     <section id="route" className="sec sec--sea" aria-labelledby="route-h">
       <div className="wrap">
         <h2 id="route-h">Where he went</h2>
-        <p className="lede">Scroll through the five stops. The map follows along.</p>
+        <p className="lede">Scroll through the five stops. The map follows along. On a phone you can also tap a dot.</p>
 
         <div className="route">
+          <div className="route__sticky">
           <div className="route__map" aria-hidden="true">
             <svg viewBox="525 585 140 138" role="img" aria-label="Map of the Kanto region showing Yokohama, Tokyo, Nikko and Hakone">
               <rect x="525" y="585" width="140" height="138" className="sea" />
@@ -82,6 +85,24 @@ export default function RouteMap() {
               })}
             </svg>
             <p className="route__credit">Map outline: Lincun and Erida539, CC BY-SA 3.0</p>
+          </div>
+          <div className="route__bar">
+            <p className="route__count" aria-live="polite">
+              Stop {active + 1} of {chapters.length}
+            </p>
+            <div className="route__dots">
+              {chapters.map((c, i) => (
+                <button
+                  key={c.id}
+                  type="button"
+                  className={i === active ? "dot is-on" : "dot"}
+                  aria-label={`Go to stop ${i + 1}: ${c.title}`}
+                  aria-current={i === active ? "step" : undefined}
+                  onClick={() => go(i)}
+                />
+              ))}
+            </div>
+          </div>
           </div>
 
           <ol className="route__steps">

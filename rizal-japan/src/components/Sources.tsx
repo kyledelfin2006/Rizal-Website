@@ -1,5 +1,22 @@
 import { confidenceHelp, confidenceLabel, Confidence, credits, peopleCredits, disclaimer, furtherReading, sources } from "../data/content";
+import { useEffect, useRef } from "react";
 import Badge from "./Badge";
+
+// Collapsible on phones, open on larger screens.
+function Fold({ title, children }: { title: string; children: React.ReactNode }) {
+  const ref = useRef<HTMLDetailsElement>(null);
+  useEffect(() => {
+    if (ref.current) ref.current.open = window.matchMedia("(min-width: 761px)").matches;
+  }, []);
+  return (
+    <details ref={ref} className="fold">
+      <summary>
+        <h3>{title}</h3>
+      </summary>
+      {children}
+    </details>
+  );
+}
 
 export default function Sources() {
   const levels: Confidence[] = ["biography", "repeated", "differ"];
@@ -21,7 +38,7 @@ export default function Sources() {
         </dl>
         <p className="note">{disclaimer}</p>
 
-        <h3>References</h3>
+        <Fold title="References">
         <ul className="refs">
           {sources.map((s) => (
             <li key={s.label}>
@@ -36,15 +53,17 @@ export default function Sources() {
             </li>
           ))}
         </ul>
+        </Fold>
 
-        <h3>For further reading</h3>
+        <Fold title="For further reading">
         <ul className="refs">
           {furtherReading.map((f) => (
             <li key={f}>{f}</li>
           ))}
         </ul>
+        </Fold>
 
-        <h3>Image credits</h3>
+        <Fold title="Image credits">
         <ul className="refs">
           {[...credits, ...peopleCredits].map((c) => (
             <li key={c.what}>
@@ -52,6 +71,7 @@ export default function Sources() {
             </li>
           ))}
         </ul>
+        </Fold>
         <p className="note">
           Badge names: {levels.map((l) => confidenceLabel[l]).join(", ")}.
         </p>

@@ -48,15 +48,17 @@ export function People() {
                   <small>No known portrait</small>
                 </div>
               )}
-              {p.jp && (
-                <span className="member__jp" lang="ja" aria-hidden="true">
-                  {p.jp}
-                </span>
-              )}
-              <h3>{p.name}</h3>
-              <p className="member__role">{p.role}</p>
-              <p>{p.text}</p>
-              <Badge level={p.confidence} />
+              <div className="member__body">
+                {p.jp && (
+                  <span className="member__jp" lang="ja" aria-hidden="true">
+                    {p.jp}
+                  </span>
+                )}
+                <h3>{p.name}</h3>
+                <p className="member__role">{p.role}</p>
+                <p>{p.text}</p>
+                <Badge level={p.confidence} />
+              </div>
             </li>
           ))}
         </ul>

@@ -88,3 +88,72 @@ First draft: heritage page on cream paper, big serif, stat tiles, three feature 
 ## Accuracy notes
 
 Not verified against Guerrero or Zaide. Confirm "Widely repeated" items before formal submission.
+
+---
+
+# Mobile UI/UX plan
+
+Audit at 375px (before changes): the header stacks to 90px tall and the nav scrolls sideways with no cue that it continues; the portrait sits below the first screen; 9 links and buttons are under 44px tall; hover states are the only feedback on the calendar and cards; the calendar detail card sits under the grid, so a tap shows nothing on screen; the quiz options wrap unevenly; the sources section is a long wall of text.
+
+The site has no drawers, quote gallery or infographic grid. The equivalent surfaces are the calendar detail card (the "detail view"), the cast cards (person feature), the parallels and visit cards (infographic grid), and the sources list (references).
+
+## 1. Goals
+- Oriented in 3 seconds: who, when, where, on the first screen.
+- Thumb-friendly: every target at least 44px, key actions in the lower half, no sideways scrolling.
+- Scannable: short blocks, one idea per screen, clear section breaks.
+- Exploration without hunting: the map, the stops and the calendar answer a tap in place.
+- Fast and quiet: no layout shift, lazy images, motion only as feedback.
+
+## 2. Section decisions
+| Section | Decision |
+|---|---|
+| Hero | Portrait disc first on phones, smaller, with the stamp. Then dates, headline (clamped to 2.6 to 3rem), kanji line, lede, two full-width buttons. Height is content-driven, not forced to a full screen. |
+| Navigation | One 56px bar on phones: brand plus a Menu button. The menu is a full-width sheet of large links with the current section marked. It closes on link tap, Escape or outside tap. A thin progress bar shows how far down the page you are. Sticky. Desktop keeps the inline nav. |
+| Text sections | 16px body on phones, 1.6 line height, measure under 62ch, 56px section padding, headings at most 2.1rem. |
+| Journey (voyage ribbon) | Already stacks vertically with a dotted line. Keep, tighten spacing, enlarge the Japan leg. |
+| Map | Sticky strip under the header, 30svh tall. A "Stop 2 of 5" chip and five tappable dots jump to a stop. Stops are 55svh tall instead of 70vh so the next one peeks in as a cue to keep scrolling. |
+| Detail view (calendar card) | On phones the card sits above the grid and sticks under the header, so a tap on a day updates what you can already see. Day cells get a press state. |
+| People | Portrait beside the text (96px) on phones, instead of a full-width block above it. |
+| Infographic grid (parallels, visits, doings) | One column, tighter padding; the kanji in "What he did" shrinks to 3.2rem. |
+| Quiz | Options become full-width stacked buttons, 48px tall, with clear right and wrong states that do not rely on colour alone. |
+| Legacy and references | Reference lists become collapsible blocks on phones (open on desktop). |
+| Footer | Safe-area padding, left-aligned short copy. |
+
+## 3. Design system (phones)
+- Type: body 1rem, lede 1.1rem, h1 clamp 2.6 to 3.2rem, h2 clamp 1.8 to 2.1rem, small text never below .8rem.
+- Spacing: 4px base; 16px gutters (20px from 400px up); 56px section padding; 12px and 20px gaps.
+- Colour: unchanged tokens. Contrast is already 4.5:1 or more on indigo, sea and sakura grounds.
+- Targets: 44px minimum; 48px for primary buttons and quiz options.
+- Imagery: stays duotone; step photos capped at 180px tall.
+- Motion: press feedback (scale .97), sheet fade and slide, map pin change. All off under `prefers-reduced-motion`.
+
+## 4. Interaction patterns
+- Hover styles are wrapped in `@media (hover: hover)`; touch devices get `:active` instead.
+- `-webkit-tap-highlight-color` set to a soft indigo; `touch-action: manipulation` on controls to remove the 300ms delay.
+- `viewport-fit=cover` plus `env(safe-area-inset-*)` on the header, sheet and footer.
+- `scroll-padding-top` matches the new header height so anchors land clear of it.
+
+## 5. UX writing
+- Menu button says "Menu" (and "Close" when open). Nav labels stay short.
+- Map hint: "Scroll or tap a dot to change stop."
+- Calendar hint: "Tap a yellow day."
+- Phones get "Stop 2 of 5" and "Day 12 of 45" so progress is always visible.
+
+## 6. Accessibility
+- Menu button has `aria-expanded` and `aria-controls`; sheet closes on Escape and returns focus to the button.
+- Visible focus rings kept; map dots have labels; the live region on the calendar card stays.
+- Order in the DOM matches the visual order on phones, except the calendar card, which is moved with CSS `order` only.
+- Reduced motion removes the ship, the progress bar easing, sheet animation and smooth scrolling.
+- Works in landscape: hero height is not locked to the viewport.
+
+## 7. Visual QA
+Viewports: 320, 375, 390, 414, 768, 1024, 1440. Per section: no horizontal scroll, no clipped text, targets at least 44px, sticky header and map do not overlap content, anchors land below the header. Real-device checks before submission: iOS Safari (notch, dynamic toolbar), Android Chrome, landscape on a phone.
+
+## 8. Order of work
+1. Base tokens, viewport meta, hover and tap rules (everything depends on this).
+2. Header and menu sheet (changes header height, which the sticky map and calendar depend on).
+3. Hero.
+4. Map chip, dots and stop height.
+5. Calendar card order and sticky.
+6. People, quiz, grids, sources, footer.
+7. Build, type check, viewport pass.

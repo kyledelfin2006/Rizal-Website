@@ -46,7 +46,7 @@ export default function Calendar() {
       <div className="wrap">
         <h2 id="days-h">The 45 days, day by day</h2>
         <p className="lede">
-          Each square is one day, from arrival on 28 February to departure on 13 April. Pick a marked day to read what
+          Each square is one day, from arrival on 28 February to departure on 13 April. Tap a yellow day to read what
           happened. The unmarked days are where the sources go quiet.
         </p>
 
