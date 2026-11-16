@@ -11,14 +11,14 @@ Not a brochure. This is a scrolling travel-guide website with an interactive map
 |---|---|---|
 | Historical accuracy | 30 | Every fact lives in `src/data/content.ts` with a confidence tag: *In a biography*, *Widely repeated* or *Sources differ*. Facts I could not verify were left out (judo, kabuki, Kyoto, Osaka, Kobe). |
 | Completeness | 20 | Places (map), events (calendar), people (cast), experiences, the voyage there and on, and what to visit today. |
-| Creativity and design | 20 | Sun-disc hero with a ship that sails across Hokusai's wave once on load, scroll-driven map, duotone photography, a 45-day calendar. |
+| Creativity and design | 20 | Sun-disc hero with a ship that sails across Hokusai's wave on a continuous loop, scroll-driven map, duotone photography, a 45-day calendar. |
 | Organization | 15 | Seven sections in the order a traveller asks questions: why, where, when, what, who, then, now. Sticky nav tracks position. |
 | Grammar and clarity | 10 | Short sentences, plain verbs, sentence-case headings, one proofreading pass over `content.ts`. |
 | References | 5 | Sources section with direct links, how each was used, and image credits with licences. |
 
 ## Site structure
 
-1. Hero: what this is, the dates, a ship sailing once across the wave.
+1. Hero: what this is, the dates, a ship sailing across the wave on a loop.
 2. The voyage: ribbon from Manila to London with the Japan leg emphasised (why Japan was a stopover).
 3. The route: sticky map of the Kanto region. Scrolling five chapters (Yokohama, Tokyo Hotel, Spanish Legation, day trips, departure) moves the highlight along the route.
 4. The 45 days: a calendar from 28 Feb to 13 Apr with the dated events pinned. 1888 was a leap year.
@@ -64,7 +64,7 @@ Layout:
 - Stamps and kanji are used where they carry meaning (places, dates), never as filler.
 
 Motion:
-- One load moment: the ship crossing the wave.
+- One ambient moment: the ship crossing the wave on a slow loop (18s).
 - Everything else answers the user (scrolling the map, opening a card, answering the quiz).
 - `prefers-reduced-motion` turns the ship off.
 
