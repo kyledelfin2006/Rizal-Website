@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.claude/
+# research text used while checking facts; not part of the site
+scratch-src/
